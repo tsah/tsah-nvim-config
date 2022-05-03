@@ -6,6 +6,16 @@ vim.cmd [[
     autocmd BufWinEnter * :set formatoptions-=cro
     autocmd FileType qf set nobuflisted
   augroup end
+ 
+  augroup lsp
+    au!
+    au FileType java,scala,sbt lua require("metals").initialize_or_attach({})
+  augroup end 
+  
+  augroup _python
+    autocmd!
+    autocmd FileType python setlocal colorcolumn=99
+  augroup end
 
   augroup _git
     autocmd!
