@@ -79,7 +79,6 @@ local opts = {
 }
 
 local mappings = {
-  ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["b"] = {
     "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>",
     "Buffers",
@@ -95,7 +94,24 @@ local mappings = {
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
-
+  a = {
+    name = "Args",
+    s = {
+      name = "Swap",
+      p = {
+        "<cmd>TSTextobjectSwapPrevious @parameter.inner<cr>",
+        "Previous"
+      },
+      n = {
+        "<cmd>TSTextobjectSwapNext @parameter.inner<cr>",
+        "Next"
+      },
+    },
+    w = {
+        "<cmd>:ArgWrap<cr>",
+        "Wrap"
+    }
+  },
   p = {
     name = "Packer",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
