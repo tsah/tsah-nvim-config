@@ -197,6 +197,11 @@ local mappings = {
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
+  n = {
+    name = "Navigate",
+    t = {"<cmd> lua require 'user.leap'.leap_ts_nodes()<cr>", "Code targets"},
+    l = {"<cmd> lua require 'user.leap'.leap_lines()<cr>", "Line targets"}
+  },
 }
 
 which_key.setup(setup)

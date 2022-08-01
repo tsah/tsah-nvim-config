@@ -84,12 +84,6 @@ local function lsp_keymaps(bufnr)
   vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
 end
 
-require "lsp_signature".setup({
-  bind = true, -- This is mandatory, otherwise border config won't get registered.
-  handler_opts = {
-    border = "rounded"
-  }
-})
 
 M.on_attach = function(client, bufnr)
   if client.name == "tsserver" then

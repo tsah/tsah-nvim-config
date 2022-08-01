@@ -66,7 +66,12 @@ return packer.startup(function(use)
       }
     end
   }
-  use "ggandor/lightspeed.nvim"
+  use {
+    "ggandor/leap.nvim",
+    config = function()
+      require('leap').set_default_keymaps()
+    end
+  }
   use {
     "ur4ltz/surround.nvim",
     config = function()
@@ -79,6 +84,7 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  use "sainnhe/sonokai"
   -- use "lunarvim/darkplus.nvim"
 
   -- cmp plugins
@@ -118,6 +124,7 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use 'p00f/nvim-ts-rainbow'
 
   -- Git
   use "lewis6991/gitsigns.nvim"
