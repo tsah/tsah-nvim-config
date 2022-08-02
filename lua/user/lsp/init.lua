@@ -9,3 +9,9 @@ require "user.lsp.null-ls"
 require "user.lsp.metals"
 
 require('rust-tools').setup({})
+
+
+local lsp = require('lsp-zero')
+
+lsp.preset('recommended')
+lsp.setup()
