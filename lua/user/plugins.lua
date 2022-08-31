@@ -82,7 +82,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP-- LSP Support
   use {'williamboman/mason.nvim'}
   use {'williamboman/mason-lspconfig.nvim'}
-
+  use {"ray-x/lsp_signature.nvim"}
   -- Autocompletion
   use {'hrsh7th/nvim-cmp'}
   use {'hrsh7th/cmp-buffer'}
