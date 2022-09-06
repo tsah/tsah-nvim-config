@@ -176,7 +176,15 @@ local normal_mappings = {
     },
   },
   s = {
-    name = "Search",
+    name = "Search/surround",
+    s = {
+      name = "Surround",
+      a = {"<cmd> lua require('mini.surround').add()<cr>", "Add"},
+      d = {"<cmd> lua require('mini.surround').delete()<cr>", "Delete"},
+      f = {"<cmd> lua require('mini.surround').find()<cr>", "Find"},
+      h = {"<cmd> lua require('mini.surround').highlight()<cr>", "Highlight"},
+      r = {"<cmd> lua require('mini.surround').operator('replace') . ' '<cr>", "Replace"},
+    },
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
@@ -202,6 +210,11 @@ local normal_mappings = {
     t = {"<cmd> lua require 'user.leap'.leap_ts_nodes()<cr>", "Code targets"},
     l = {"<cmd> lua require 'user.leap'.leap_lines()<cr>", "Line targets"}
   },
+  d = {
+    name = "Harpoon",
+    a = {"<cmd>lua require(\"harpoon.mark\").add_file()<cr>", "Add file"},
+    m = {"<cmd>lua require(\"harpoon.ui\").toggle_quick_menu()<cr>", "Menu"},
+  }
 }
 
 local v_opts = {

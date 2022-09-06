@@ -69,6 +69,7 @@ return packer.startup(function(use)
   use { 'echasnovski/mini.nvim', branch = 'stable' }
   use { 'FooSoft/vim-argwrap'}
   use { "ellisonleao/gruvbox.nvim" }
+  use  {"ThePrimeagen/harpoon"}
 
   -- Colorschemes
   use "sainnhe/sonokai"
