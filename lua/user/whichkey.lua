@@ -174,6 +174,12 @@ local normal_mappings = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
     },
+    p = {
+          function()
+            require("user.lsp.peek").Peek("definition")
+          end,
+          "Peek definition",
+        },
   },
   s = {
     name = "Search/surround",

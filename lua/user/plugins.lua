@@ -84,6 +84,7 @@ return packer.startup(function(use)
   use {'williamboman/mason.nvim'}
   use {'williamboman/mason-lspconfig.nvim'}
   use {"ray-x/lsp_signature.nvim"}
+  use {"https://git.sr.ht/~whynothugo/lsp_lines.nvim"}
   -- Autocompletion
   use {'hrsh7th/nvim-cmp'}
   use {'hrsh7th/cmp-buffer'}
