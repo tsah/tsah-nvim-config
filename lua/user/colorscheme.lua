@@ -1,11 +1,5 @@
-vim.cmd [[
-try
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 
-  let g:sonokai_style = 'atlantis'
-  let g:sonokai_better_performance = 1
-  colorscheme sonokai
-catch /^Vim\%((\a\+)\)\=:E185/
-  colorscheme default
-  set background=dark
-endtry
-]]
+require("catppuccin").setup()
+
+vim.cmd [[colorscheme catppuccin]]

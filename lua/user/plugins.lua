@@ -48,7 +48,6 @@ return packer.startup(function(use)
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use {
@@ -68,15 +67,11 @@ return packer.startup(function(use)
   }
   use { 'echasnovski/mini.nvim', branch = 'stable' }
   use { 'FooSoft/vim-argwrap'}
-  use { "ellisonleao/gruvbox.nvim" }
   use  {"ThePrimeagen/harpoon"}
 
   -- Colorschemes
-  use "sainnhe/sonokai"
   -- use "lunarvim/darkplus.nvim"
-
-  -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
+  use { "catppuccin/nvim", as = "catppuccin" }
 
   -- LSP
   use "tamago324/nlsp-settings.nvim" -- language server settings defined use {
@@ -85,17 +80,6 @@ return packer.startup(function(use)
   use {'williamboman/mason-lspconfig.nvim'}
   use {"ray-x/lsp_signature.nvim"}
   use {"https://git.sr.ht/~whynothugo/lsp_lines.nvim"}
-  -- Autocompletion
-  use {'hrsh7th/nvim-cmp'}
-  use {'hrsh7th/cmp-buffer'}
-  use {'hrsh7th/cmp-path'}
-  use {'saadparwaiz1/cmp_luasnip'}
-  use {'hrsh7th/cmp-nvim-lsp'}
-  use {'hrsh7th/cmp-nvim-lua'}
-
-  -- Snippets
-  use {'L3MON4D3/LuaSnip'}
-  use {'rafamadriz/friendly-snippets'}
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use {'hrsh7th/cmp-nvim-lsp-signature-help'}
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
@@ -108,9 +92,30 @@ return packer.startup(function(use)
   })
   use('simrat39/rust-tools.nvim')
 
+  -- Autocompletion
+  use {'hrsh7th/nvim-cmp'}
+  use {'hrsh7th/cmp-buffer'}
+  use {'hrsh7th/cmp-path'}
+  use {'saadparwaiz1/cmp_luasnip'}
+  use {'hrsh7th/cmp-nvim-lsp'}
+  use {'hrsh7th/cmp-nvim-lua'}
+
+  -- Snippets
+  use {'L3MON4D3/LuaSnip'}
+  use {'rafamadriz/friendly-snippets'}
+
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-
+  use {
+    "AckslD/nvim-neoclip.lua",
+    requires = {
+      {'kkharji/sqlite.lua', module = 'sqlite'},
+      -- you'll need at least one of these
+    },
+    config = function()
+      require('neoclip').setup()
+    end,
+  }
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -118,6 +123,7 @@ return packer.startup(function(use)
   }
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use 'nvim-treesitter/nvim-treesitter-textobjects'
+  use 'nvim-treesitter/nvim-treesitter-context'
   use 'p00f/nvim-ts-rainbow'
   use {
         "ThePrimeagen/refactoring.nvim",

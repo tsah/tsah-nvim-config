@@ -93,6 +93,7 @@ local normal_mappings = {
     "Find files",
   },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
+  ['y'] = {"<cmd>lua require('telescope').extensions.neoclip.default()<cr>", "Find in clipboard"},
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
   a = {
     name = "Args",

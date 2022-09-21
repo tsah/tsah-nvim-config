@@ -75,3 +75,5 @@ configs.setup {
     },
   },
 }
+
+require'treesitter-context'.setup()
