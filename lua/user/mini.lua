@@ -1,8 +1,6 @@
 require("mini.trailspace").setup();
--- require("mini.ai").setup();
 require("mini.comment").setup();
 require("mini.cursorword").setup();
--- require("mini.indentscope").setup();
 require("mini.statusline").setup();
 require("mini.surround").setup({
   mappings = {
@@ -19,3 +17,4 @@ require("mini.surround").setup({
   },
 });
 require("mini.tabline").setup()
+require("mini.pairs").setup()
