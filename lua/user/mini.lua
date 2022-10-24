@@ -2,18 +2,20 @@ require("mini.trailspace").setup();
 -- require("mini.ai").setup();
 require("mini.comment").setup();
 require("mini.cursorword").setup();
-require("mini.indentscope").setup();
-require("mini.pairs").setup();
+-- require("mini.indentscope").setup();
 require("mini.statusline").setup();
 require("mini.surround").setup({
   mappings = {
-    add = 'ca',
-    delete = 'cd',
-    find = 'cf', -- Find surrounding (to the right)
-    find_left = 'cF', -- Find surrounding (to the left)
-    highlight = 'ch', -- Highlight surrounding
-    replace = 'cr', -- Replace surrounding
-    update_n_lines = 'cn',
-  }
+    add = 'za', -- Add surrounding in Normal and Visual modes
+    delete = 'zd', -- Delete surrounding
+    find = 'zf', -- Find surrounding (to the right)
+    find_left = 'zF', -- Find surrounding (to the left)
+    highlight = 'zh', -- Highlight surrounding
+    replace = 'zr', -- Replace surrounding
+    update_n_lines = 'zn', -- Update `n_lines`
+
+    suffix_last = 'l', -- Suffix to search with "prev" method
+    suffix_next = 'n', -- Suffix to search with "next" method
+  },
 });
 require("mini.tabline").setup()

@@ -45,7 +45,6 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "kyazdani42/nvim-tree.lua"
   use "akinsho/toggleterm.nvim"
-  use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
@@ -63,7 +62,7 @@ return packer.startup(function(use)
     "ggandor/leap.nvim",
     config = function()
       require('leap').set_default_keymaps()
-    end
+   end
   }
   use { 'echasnovski/mini.nvim', branch = 'stable' }
   use { 'FooSoft/vim-argwrap'}
@@ -125,12 +124,6 @@ return packer.startup(function(use)
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'nvim-treesitter/nvim-treesitter-context'
   use 'p00f/nvim-ts-rainbow'
-  use {
-        "ThePrimeagen/refactoring.nvim",
-        module = { "refactoring", "telescope" },
-        keys = { [[<leader>r]] },
-        wants = { "telescope.nvim" },
-  }
   -- Git
   use "lewis6991/gitsigns.nvim"
 
