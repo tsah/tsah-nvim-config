@@ -19,6 +19,18 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
+-- Better movement --
+keymap("n", "<C-u>", "<C-u>zz", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
+
+-- Yanky better yank put config--
+vim.keymap.set({"n","x"}, "p", "<Plug>(YankyPutAfter)")
+vim.keymap.set({"n","x"}, "P", "<Plug>(YankyPutBefore)")
+keymap("n", "<c-n>", "<Plug>(YankyCycleForward)", opts)
+keymap("n", "<c-p>", "<Plug>(YankyCycleBackward)", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)

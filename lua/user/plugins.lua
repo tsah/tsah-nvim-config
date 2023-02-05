@@ -50,15 +50,6 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
   use {
-  'rmagatti/auto-session',
-    config = function()
-      require('auto-session').setup {
-        log_level = 'info',
-        auto_session_suppress_dirs = {'~/', '~/Projects'}
-      }
-    end
-  }
-  use {
     "ggandor/leap.nvim",
     config = function()
       require('leap').set_default_keymaps()
@@ -67,6 +58,12 @@ return packer.startup(function(use)
   use { 'echasnovski/mini.nvim', branch = 'stable' }
   use { 'FooSoft/vim-argwrap'}
   use  {"ThePrimeagen/harpoon"}
+  use {
+    "gbprod/yanky.nvim",
+    config = function()
+      require('yanky').setup({})
+    end
+  }
 
   -- Colorschemes
   -- use "lunarvim/darkplus.nvim"
@@ -115,6 +112,7 @@ return packer.startup(function(use)
       require('neoclip').setup()
     end,
   }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
   -- Treesitter
   use {
     "nvim-treesitter/nvim-treesitter",
@@ -123,10 +121,19 @@ return packer.startup(function(use)
   use "JoosepAlviste/nvim-ts-context-commentstring"
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use 'nvim-treesitter/nvim-treesitter-context'
-  use 'p00f/nvim-ts-rainbow'
   -- Git
+  use "tpope/vim-fugitive"
+  use "tpope/vim-rhubarb"
   use "lewis6991/gitsigns.nvim"
 
+  -- DAP
+  use {
+    'mfussenegger/nvim-dap-python',
+    config = function ()
+      require('dap-python').setup()
+      require('dap-python').test_runner = 'pytest'
+    end
+  }
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

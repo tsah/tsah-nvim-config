@@ -219,9 +219,15 @@ local normal_mappings = {
     l = {"<cmd> lua require 'user.leap'.leap_lines()<cr>", "Line targets"}
   },
   d = {
-    name = "Harpoon",
-    a = {"<cmd>lua require(\"harpoon.mark\").add_file()<cr>", "Add file"},
-    m = {"<cmd>lua require(\"harpoon.ui\").toggle_quick_menu()<cr>", "Menu"},
+    name = "DAP",
+    b = {"<cmd> DapToggleBreakpoint<cr>", "Toggle Breakpoint"},
+    c = {"<cmd> DapContinue<cr>", "Continue"},
+    r = {"<cmd> DapToggleRepl<cr>", "REPL"},
+    O = {"<cmd> DapStepOut<cr>", "Step out"},
+    i = {"<cmd> DapStepInto<cr>", "Step into"},
+    o = {"<cmd> DapStepOver<cr>", "Step over"},
+    t = {"<cmd> DapTerminate<cr>", "Terminate"},
+    u = {'<cmd>lua require"dapui".toggle()<cr>', "UI"},
   }
 }
 
